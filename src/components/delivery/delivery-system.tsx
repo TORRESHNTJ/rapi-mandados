@@ -1,6 +1,5 @@
 'use client';
 
-
 import React, { useState } from 'react';
 import { MapPin, Clock, User, Package } from 'lucide-react';
 
@@ -72,7 +71,7 @@ const DeliverySystem = () => {
                   <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <input
                     type="text"
-                    className="pl-10 w-full rounded-md border p-2"
+                    className="pl-10 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     value={newOrder.pickup}
                     onChange={(e) => setNewOrder({...newOrder, pickup: e.target.value})}
                     required
@@ -88,7 +87,7 @@ const DeliverySystem = () => {
                   <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <input
                     type="text"
-                    className="pl-10 w-full rounded-md border p-2"
+                    className="pl-10 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     value={newOrder.delivery}
                     onChange={(e) => setNewOrder({...newOrder, delivery: e.target.value})}
                     required
@@ -102,7 +101,7 @@ const DeliverySystem = () => {
                 Descripción del Mandado
               </label>
               <textarea
-                className="w-full rounded-md border p-2 min-h-[100px]"
+                className="w-full rounded-md border border-gray-300 p-2 min-h-[100px] focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 value={newOrder.description}
                 onChange={(e) => setNewOrder({...newOrder, description: e.target.value})}
                 required
@@ -118,7 +117,7 @@ const DeliverySystem = () => {
                   <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <input
                     type="text"
-                    className="pl-10 w-full rounded-md border p-2"
+                    className="pl-10 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     value={newOrder.customerName}
                     onChange={(e) => setNewOrder({...newOrder, customerName: e.target.value})}
                     required
@@ -132,7 +131,7 @@ const DeliverySystem = () => {
                 </label>
                 <input
                   type="tel"
-                  className="w-full rounded-md border p-2"
+                  className="w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   value={newOrder.customerPhone}
                   onChange={(e) => setNewOrder({...newOrder, customerPhone: e.target.value})}
                   required
@@ -142,7 +141,7 @@ const DeliverySystem = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+              className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200 font-medium"
             >
               Crear Mandado
             </button>
@@ -177,7 +176,7 @@ const DeliverySystem = () => {
                   <span>{new Date(order.createdAt).toLocaleString()}</span>
                 </div>
               </div>
-              <span className={`px-2 py-1 rounded-full text-sm ${getStatusClasses(order.status)}`}>
+              <span className={`px-3 py-1 rounded-full text-sm ${getStatusClasses(order.status)}`}>
                 {getStatusText(order.status)}
               </span>
             </div>
