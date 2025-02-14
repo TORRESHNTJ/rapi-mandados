@@ -1,3 +1,6 @@
+'use client';
+
+
 import React, { useState } from 'react';
 import { MapPin, Clock, User, Package } from 'lucide-react';
 
